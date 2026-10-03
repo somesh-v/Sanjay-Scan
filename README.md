@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Sanjay Scan Centre
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive website for **Sanjay Scans**, built to make the centre's services easy to find and appointments easy to book. Patients can browse services, book an appointment, and contact the centre from any device.
+
+**Live site:** [sanjayscans.in](https://www.sanjayscans.in/)
+**Used by:** 100+ active users
+
+![Sanjay Scan Centre home page](docs/screenshots/home.png)
+
+## Features
+
+- **Responsive design:** works smoothly on phones, tablets, and desktops.
+- **Appointment booking:** patients request an appointment online, and the details are sent by email.
+- **Contact form:** a simple way to send questions to the centre.
+- **Service showcase:** clear sections for the scans and services offered.
+- **Smooth, modern UI:** animated sections, image carousels, and counters that highlight key numbers.
+- **Fast navigation:** client-side routing between pages without full reloads.
+
+## Tech Stack
+
+| Layer | Technologies |
+|---|---|
+| Frontend | React 18, React Router 6, Tailwind CSS, Framer Motion |
+| UI components | React Slick, React Responsive Carousel, React CountUp, React Icons, Heroicons |
+| Backend | Node.js, Express |
+| Email | Nodemailer |
+| Tooling | Create React App (react-scripts), PostCSS, Autoprefixer, dotenv |
+
+## Screenshots
+
+| Home | Services | Appointment |
+|---|---|---|
+| ![Home](docs/screenshots/home.png) | ![Services](docs/screenshots/services.png) | ![Appointment](docs/screenshots/appointment.png) |
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 18 or later
+- npm (comes with Node.js)
+- An email account (such as Gmail with an app password) for sending appointment and contact emails
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/somesh-v/Sanjay-Scan.git
+cd Sanjay-Scan
+
+# 2. Install dependencies
+npm install
+```
+
+### Environment variables
+
+Create a `.env` file in the project root. Adjust the names to match your code.
+
+```env
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_app_password
+RECEIVER_EMAIL=where_to_receive_bookings@example.com
+PORT=5000
+```
+
+> Never commit your `.env` file. Keep it listed in `.gitignore`.
+
+### Run the app
+
+```bash
+# Start the backend server (email handling)
+node <your-server-file>.js
+
+# Start the React development server (in a second terminal)
+npm start
+```
+
+The site opens at [http://localhost:3000](http://localhost:3000).
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+|---|---|
+| `npm start` | Runs the app in development mode |
+| `npm run build` | Creates an optimized production build in `build/` |
+| `npm test` | Runs the test runner in watch mode |
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Update this to match your folders.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+Sanjay-Scan/
+├── public/             # Static assets
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Route-level pages
+│   └── App.js          # Routes and app shell
+├── index.html
+├── tailwind.config.js  # Tailwind theme and content paths
+├── postcss.config.js
+└── package.json
+```
 
-### `npm test`
+## Deployment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create a production build with `npm run build` and host the `build/` folder on your hosting provider. The Express email server needs a Node.js host, and the frontend must point to its URL.
 
-### `npm run build`
+## Roadmap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [ ] Online report downloads for patients
+- [ ] Appointment confirmation emails to patients
+- [ ] Multilingual support
+- [ ] Automated tests
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Author
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Somesh V**
+[LinkedIn](https://www.linkedin.com/in/somesh-venkatesh-053982247/) · [GitHub](https://github.com/somesh-v) · [LeetCode](https://leetcode.com/u/Somesh_V/)
